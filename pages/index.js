@@ -30,7 +30,7 @@ const Page = () => {
                         align="center"
                     >
                         <Image
-                            borderColor={useColorModeValue("blackAlpha.800", "whiteAlpha.800")}
+                            borderColor={useColorModeValue("blackAlpha.800", "pink")}
                             borderWidth={2}
                             borderStyle="solid"
                             maxWidth="100px"
