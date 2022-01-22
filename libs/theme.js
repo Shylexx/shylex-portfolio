@@ -11,6 +11,9 @@ const styles = {
 
 const components = {
     Heading: {
+        baseStyle: {
+            fontWeight: 'light',
+        },
         variants: {
             'section-title': {
                 textDecoration: 'underline',
@@ -32,7 +35,8 @@ const components = {
 }
 
 const fonts = {
-    heading: "'M PLUS Rounded 1c'"
+    heading: "'Fira Sans', sans-serif",
+    text: "'Fira Sans', sans-serif"
 }
 
 const colors = {
@@ -44,12 +48,13 @@ const config = {
     useSystemColorMode: true
 }
 
+
 const theme = extendTheme({
     config,
     styles,
     components,
     colors,
-    fonts
+    fonts,
 })
 
 export default theme

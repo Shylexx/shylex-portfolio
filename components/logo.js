@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import {Text, useColorModeValue} from '@chakra-ui/react'
+import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
@@ -11,27 +11,29 @@ const LogoBox = styled.span`
     height: 30px;
     line-height: 20px;
     padding: 10px;
+    margin-top: 6px;
 
     &:hover img {
     }
 `
 
 const Logo = () => {
-    const footPrintImg = `/images/foxlogo${useColorModeValue('', '-dark')}.png`
+    const footPrintImg = `/images/foxlogo${useColorModeValue('-light', '')}.png`
 
-    return(
+    return (
         <Link href="/">
             <a>
                 <LogoBox>
-                 <Image src={footPrintImg} width={50} height={50} alt="Logo" />
-                <Text
-                    color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                    fontFamily="M PLUS Rounded 1c"
-                    fontWeight="bold"
-                    ml={3}
-                >
-                    Alexander Dauncey
-                </Text>
+                    <Image src={footPrintImg} width={40} height={50} alt="Logo" />
+                    <Text
+                        color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                        fontFamily="M PLUS Rounded 1c, sans serif"
+                        fontWeight="bold"
+                        ml={3}
+                        mt={3}
+                    >
+                        Alexander Dauncey
+                    </Text>
                 </LogoBox>
             </a>
         </Link>
