@@ -75,7 +75,7 @@ const Navbar = props => {
                         Work
                     </LinkItem>
                     <LinkItem href="/devlog" path={path}>
-                        DevLog
+                        Dev Log
                     </LinkItem>
 
                 </Stack>
