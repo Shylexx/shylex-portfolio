@@ -1,7 +1,6 @@
-import { Container, Heading, Box, Badge } from "@chakra-ui/react"
+import { Container, Badge } from "@chakra-ui/react"
 import Layout from "../../components/layouts/article"
-import P from "../../components/paragraph"
-import { Title, Meta } from "../../components/devlog"
+import { Title } from "../../components/devlog"
 import { getAllPostIds, getPostData } from '../../lib/logpost'
 import Date from "../../components/date"
 import NextImage from 'next/image'

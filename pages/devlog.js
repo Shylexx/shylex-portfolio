@@ -29,7 +29,7 @@ const DevLog = ({ allPostsData }) => {
                 </Heading>
                 <Section delay={0.1}>
                     <SimpleGrid columns={[1, 2, 2]} gap={6}>
-                        {allPostsData.map(({ logid, date, title, thumbnail }) => (
+                        {allPostsData.map(({ logid, date, title }) => (
                             <PostGridItem
                                 id={logid}
                                 title={title}

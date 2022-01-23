@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import NextImage from 'next/image'
-import { Box, Text, LinkBox, LinkOverlay, useColorModeValue } from '@chakra-ui/react'
+import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 
