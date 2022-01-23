@@ -1,24 +1,51 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
+import { PostGridItem } from '../components/grid-item'
+import Date from '../components/date'
 
 import cappunimage from '../public/images/work/thumbCapPun.jpg'
 
-const DevLog = () => {
+import portfoliothumb from '../public/images/devlog/thumbnails/portfolio.jpg'
+
+import { getSortedPostsData } from "../lib/logpost"
+
+export async function getStaticProps() {
+    const allPostsData = getSortedPostsData()
+    return {
+        props: {
+            allPostsData
+        }
+    }
+}
+
+
+const DevLog = ({ allPostsData }) => {
     return (
         <Layout title="Posts">
             <Container mt={6}>
                 <Heading as="h4" fontSize={20} mb={4}>
-                    Popular Posts
+                    Recent Posts
                 </Heading>
                 <Section delay={0.1}>
                     <SimpleGrid columns={[1, 2, 2]} gap={6}>
+                        {allPostsData.map(({ logid, date, title, thumbnail }) => (
+                            <PostGridItem
+                                id={logid}
+                                title={title}
+                                thumbnail={portfoliothumb}
+                            >
+                                <Date dateString={date} />
+                            </PostGridItem>
 
-                        <GridItem
+                        ))}
+
+                        <PostGridItem
                             title="Node JS Adventures"
                             thumbnail={cappunimage}
-                            href="/posts" />
+                            href="/posts">
+
+                        </PostGridItem>
 
                     </SimpleGrid>
                 </Section>

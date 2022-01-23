@@ -6,6 +6,7 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from "../components/bio"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 
+
 const Page = () => {
     return (
         <Layout>
