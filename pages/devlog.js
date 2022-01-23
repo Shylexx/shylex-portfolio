@@ -34,6 +34,7 @@ const DevLog = ({ allPostsData }) => {
                                 id={logid}
                                 title={title}
                                 thumbnail={portfoliothumb}
+                                key={logid}
                             >
                                 <Date dateString={date} />
                             </PostGridItem>
