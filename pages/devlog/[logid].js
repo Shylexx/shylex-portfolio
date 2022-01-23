@@ -23,11 +23,12 @@ export async function getStaticPaths() {
 }
 
 const LogPost = (postData) => {
+    const thumbnail = "http://shylexx.com/images/devlog/thumbnails/" + postData.postData.thumbnail
     return (
         <Layout title={postData.postData.title}>
             <Container mt={6}>
                 <NextImage
-                    src={postData.postData.thumbnail}
+                    src={thumbnail}
                     alt="Post Thumbnail"
                     className='grid-item-thumbnail'
                     width={500}
