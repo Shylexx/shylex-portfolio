@@ -24,6 +24,7 @@ export async function getStaticPaths() {
 
 const LogPost = (postData) => {
     const thumbnail = "http://shylexx.com/images/devlog/thumbnails/" + postData.postData.thumbnail
+    console.log(thumbnail)
     return (
         <Layout title={postData.postData.title}>
             <Container mt={6}>

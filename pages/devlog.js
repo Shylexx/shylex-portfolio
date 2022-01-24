@@ -29,24 +29,17 @@ const DevLog = ({ allPostsData }) => {
                 </Heading>
                 <Section delay={0.1}>
                     <SimpleGrid columns={[1, 2, 2]} gap={6}>
-                        {allPostsData.map(({ logid, date, title }) => (
+                        {allPostsData.map(({ logid, date, title, thumbnail }) => (
                             <PostGridItem
                                 id={logid}
                                 title={title}
-                                thumbnail={portfoliothumb}
+                                thumbnail={"http://shylexx.com/images/devlog/thumbnails/" +thumbnail}
                                 key={logid}
                             >
                                 <Date dateString={date} />
                             </PostGridItem>
 
                         ))}
-
-                        <PostGridItem
-                            title="Node JS Adventures"
-                            thumbnail={cappunimage}
-                            href="/posts">
-
-                        </PostGridItem>
 
                     </SimpleGrid>
                 </Section>

@@ -48,14 +48,19 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         Work
                     </Heading>
-                    <Paragraph>Paragraph{' '}
-                        <NextLink href="/works/cappun"><Link>Capital Punishment</Link></NextLink>
+                    <Paragraph>
+                        Have a look at what I&apos;ve made, from game dev to websites. Check out my devlog as well to see my in progress work and find out what I&apos;m currently learning.
                     </Paragraph>
 
-                    <Box align="center" my={4}>
-                        <NextLink href="/work">
-                            <Button rightIcon={<ChevronRightIcon />} colorScheme="pink">
+                    <Box flexShrink={0} align="center" my={4}>
+                        <NextLink href="/work" >
+                            <Button rightIcon={<ChevronRightIcon />} colorScheme="pink" mx={2}>
                                 My Portfolio
+                            </Button>
+                        </NextLink>
+                        <NextLink href="/devlog">
+                            <Button rightIcon={<ChevronRightIcon />} colorScheme="pink" mx={2}>
+                                Dev Log
                             </Button>
                         </NextLink>
                     </Box>
@@ -68,6 +73,10 @@ const Page = () => {
                     <BioSection>
                         <BioYear>2002</BioYear>
                         Born in Portsmouth, England.
+                    </BioSection>
+                    <BioSection>
+                        <BioYear>2002-2020</BioYear>
+                        To Add
                     </BioSection>
                     <BioSection>
                         <BioYear>2020</BioYear>
