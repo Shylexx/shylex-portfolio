@@ -34,7 +34,7 @@ const Page = () => {
                             borderColor={useColorModeValue("blackAlpha.800", "pink")}
                             borderWidth={2}
                             borderStyle="solid"
-                            maxWidth="100px"
+                            maxWidth="150px"
                             display="inline-block"
                             borderRadius="full"
                             src="/images/alex.jpg"
