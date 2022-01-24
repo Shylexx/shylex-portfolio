@@ -4,10 +4,6 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 import Date from '../components/date'
 
-import cappunimage from '../public/images/work/thumbCapPun.jpg'
-
-import portfoliothumb from '../public/images/devlog/thumbnails/portfolio.jpg'
-
 import { getSortedPostsData } from "../lib/logpost"
 
 export async function getStaticProps() {
