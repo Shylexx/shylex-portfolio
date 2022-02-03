@@ -1,16 +1,18 @@
-import { Container, Box, Heading, Image, Button, useColorModeValue, Icon } from "@chakra-ui/react"
+import { Container, Box, Heading, Image, Button, useColorModeValue } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import Section from '../components/section'
 import Layout from "../components/layouts/article"
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from "../components/bio"
 import { ChevronRightIcon } from "@chakra-ui/icons"
-import {FaSpotify} from 'react-icons/fa';
-import NowPlaying from "../components/nowplaying"
+import useSWR from "swr"
 
 
 const Page = () => {
+    const fetcher = (url) => fetch(url).then((r) => r.json());
+    const {data} = useSWR('/api/spotify', fetcher);
 
+    {console.log(data)};
     return (
         <Layout>
             <Container>
@@ -47,8 +49,22 @@ const Page = () => {
                     </Box>
                 </Box>
 
-                
-                <NowPlaying/>
+                {/* Spotify Now Playing */}
+                <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} mt={6} mb={6} p={3} align="center">
+                    <div> 
+                    <Image 
+                        src={data.isPlaying ? data.albumImageUrl : ""}
+                        maxWidth="150px"
+                        display="block"
+                        alt="Album Art"
+                        mb={3}
+                    />
+                    </div>
+                    <Icon as={FaSpotify}/>
+                    <a href={data.isPlaying ? data.songURL : 'https://open.spotify.com/user/21hs7w4szqul5yoyestomcd7y'} target='_blank' rel="noopener noreferrer">
+                        {data.isPlaying ? ` ${data.title}` : ' Not Currently Playing'}{data.isPlaying ? ` by  ${data.artist}` : ''}
+                    </a>
+                </Box>
                 
 
                 <Section delay={0.2}>
