@@ -39,6 +39,7 @@ export default async (_, res) => {
     const response = await getNowPlaying();
 
     if (response.status === 204 || response.status > 400) {
+        console.log("Spotify not playing");
         return res.status(200).json({isPlaying :false});
     }
 
@@ -48,9 +49,9 @@ export default async (_, res) => {
     const songURL = song.item.external_urls.spotify;
     const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
     const albumImageUrl = song.item.album.images[0].url;
-    
 
-    console.log(title + " " +artist);
+    console.log("Spotify is playing");
+
     return res.status(200).json({
         songURL,
         albumImageUrl,

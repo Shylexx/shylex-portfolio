@@ -11,8 +11,6 @@ import useSWR from "swr"
 const Page = () => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     const {data} = useSWR('/api/spotify', fetcher);
-
-    {console.log(data)};
     return (
         <Layout>
             <Container>
