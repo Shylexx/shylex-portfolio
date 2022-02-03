@@ -1,13 +1,16 @@
-import { Container, Box, Heading, Image, Button, useColorModeValue } from "@chakra-ui/react"
+import { Container, Box, Heading, Image, Button, useColorModeValue, Icon } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import Section from '../components/section'
 import Layout from "../components/layouts/article"
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from "../components/bio"
 import { ChevronRightIcon } from "@chakra-ui/icons"
+import {FaSpotify} from 'react-icons/fa';
+import NowPlaying from "../components/nowplaying"
 
 
 const Page = () => {
+
     return (
         <Layout>
             <Container>
@@ -43,6 +46,10 @@ const Page = () => {
 
                     </Box>
                 </Box>
+
+                
+                <NowPlaying/>
+                
 
                 <Section delay={0.2}>
                     <Heading as="h3" variant="section-title">
