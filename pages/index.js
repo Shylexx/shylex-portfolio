@@ -11,12 +11,12 @@ import {FaSpotify} from "react-icons/fa"
 
 const Page = () => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
-    const {data, error} = useSWR('/api/spotify', fetcher);
+    const {data} = useSWR('/api/spotify', fetcher);
     //if(error) return error;
     
     const colors = useColorModeValue('whiteAlpha.500', 'whiteAlpha.200');
     const bordercolor = useColorModeValue("blackAlpha.800", "pink");
-    if (data) return (
+    return (
         <Layout>
             <Container>
                 <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
@@ -53,7 +53,7 @@ const Page = () => {
                 </Box>
 
                 {/* Spotify Now Playing */}
-                <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
+                {data ? <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
                     {data.isPlaying ? 
                     <div> 
                     <Image 
@@ -69,7 +69,13 @@ const Page = () => {
                     <a href={data.isPlaying ? data.songURL : 'https://open.spotify.com/user/21hs7w4szqul5yoyestomcd7y'} target='_blank' rel="noopener noreferrer">
                         {data.isPlaying ? ` ${data.title}` : ' Not Currently Playing'}{data.isPlaying ? ` by  ${data.artist}` : ''}
                     </a>
-                </Box>
+                </Box> 
+                : 
+                <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
+                    <Icon as={FaSpotify}/>
+                    <p>Spotify Loading...</p>
+                </Box>}
+                
                 
 
                 <Section delay={0.2}>
@@ -115,8 +121,6 @@ const Page = () => {
             </Container>
         </Layout>
     )
-    if(!data) return "loading";
-    if(error) return "An error has occured";
 }
 
 export default Page
