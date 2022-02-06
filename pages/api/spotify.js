@@ -35,7 +35,7 @@ export const getNowPlaying = async () => {
     });
 };
 
-export default async (_, res) => {
+async function SpotifyAPI (_, res) {
     const response = await getNowPlaying();
 
     if (response.status === 204 || response.status > 400) {
@@ -50,8 +50,6 @@ export default async (_, res) => {
     const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
     const albumImageUrl = song.item.album.images[0].url;
 
-    console.log("Spotify is playing");
-
     return res.status(200).json({
         songURL,
         albumImageUrl,
@@ -60,3 +58,5 @@ export default async (_, res) => {
         title,
     });
 };
+
+export default SpotifyAPI

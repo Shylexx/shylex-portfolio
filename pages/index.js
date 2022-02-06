@@ -1,4 +1,4 @@
-import { Container, Box, Heading, Image, Button, useColorModeValue } from "@chakra-ui/react"
+import { Container, Box, Heading, Image, Button, useColorModeValue, Icon } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import Section from '../components/section'
 import Layout from "../components/layouts/article"
@@ -6,15 +6,20 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from "../components/bio"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 import useSWR from "swr"
-
+import {FaSpotify} from "react-icons/fa"
+ 
 
 const Page = () => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
-    const {data} = useSWR('/api/spotify', fetcher);
-    return (
+    const {data, error} = useSWR('/api/spotify', fetcher);
+    //if(error) return error;
+    
+    const colors = useColorModeValue('whiteAlpha.500', 'whiteAlpha.200');
+    const bordercolor = useColorModeValue("blackAlpha.800", "pink");
+    if (data) return (
         <Layout>
             <Container>
-                <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} mt={6} mb={6} p={3} align="center">
+                <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
                     Hello, I&apos;m a Student at the University of Brighton, UK.
                 </Box>
 
@@ -34,7 +39,7 @@ const Page = () => {
                         align="center"
                     >
                         <Image
-                            borderColor={useColorModeValue("blackAlpha.800", "pink")}
+                            borderColor={bordercolor}
                             borderWidth={2}
                             borderStyle="solid"
                             maxWidth="150px"
@@ -48,7 +53,8 @@ const Page = () => {
                 </Box>
 
                 {/* Spotify Now Playing */}
-                <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} mt={6} mb={6} p={3} align="center">
+                <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
+                    {data.isPlaying ? 
                     <div> 
                     <Image 
                         src={data.isPlaying ? data.albumImageUrl : ""}
@@ -57,7 +63,8 @@ const Page = () => {
                         alt="Album Art"
                         mb={3}
                     />
-                    </div>
+                    </div> : <></> }
+                    
                     <Icon as={FaSpotify}/>
                     <a href={data.isPlaying ? data.songURL : 'https://open.spotify.com/user/21hs7w4szqul5yoyestomcd7y'} target='_blank' rel="noopener noreferrer">
                         {data.isPlaying ? ` ${data.title}` : ' Not Currently Playing'}{data.isPlaying ? ` by  ${data.artist}` : ''}
@@ -108,6 +115,8 @@ const Page = () => {
             </Container>
         </Layout>
     )
+    if(!data) return "loading";
+    if(error) return "An error has occured";
 }
 
 export default Page
