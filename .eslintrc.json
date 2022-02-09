@@ -2,10 +2,6 @@
     "root": true,
     "extends": "next",
     "rules": {
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
         "no-unused-vars": [
             "error",
             {
