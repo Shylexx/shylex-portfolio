@@ -54,8 +54,12 @@ const Page = () => {
 
                 {/* Spotify Now Playing */}
                 {data ? <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
-                    {data.isPlaying ? 
-                    <div> 
+                    {data.isPlaying ?
+                    <>
+                    <div>
+                    <Paragraph>
+                        Currently Playing:
+                    </Paragraph>
                     <Image 
                         src={data.isPlaying ? data.albumImageUrl : ""}
                         maxWidth="150px"
@@ -63,7 +67,7 @@ const Page = () => {
                         alt="Album Art"
                         mb={3}
                     />
-                    </div> : <></> }
+                    </div></> : <></> }
                     
                     <Icon as={FaSpotify}/>
                     <a href={data.isPlaying ? data.songURL : 'https://open.spotify.com/user/21hs7w4szqul5yoyestomcd7y'} target='_blank' rel="noopener noreferrer">
