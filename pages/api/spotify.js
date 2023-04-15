@@ -39,7 +39,6 @@ async function SpotifyAPI (_, res) {
     const response = await getNowPlaying();
 
     if (response.status === 204 || response.status > 400) {
-        console.log("Spotify not playing");
         return res.status(200).json({isPlaying :false});
     }
 
