@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 import Section from '../components/section'
 import Layout from "../components/layouts/article"
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from "../components/bio"
+//import { BioSection, BioYear } from "../components/bio"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 import useSWR from "swr"
 import {FaSpotify} from "react-icons/fa"
@@ -20,7 +20,7 @@ const Page = () => {
         <Layout>
             <Container>
                 <Box borderRadius="lg" bg={colors} mt={6} mb={6} p={3} align="center">
-                    Hello, I&apos;m a Student at the University of Brighton, UK.
+                    Hello, I&apos;m a Game Developer based in Brighton, UK.
                 </Box>
 
                 <Box display={{ md: 'flex' }}>
@@ -28,7 +28,7 @@ const Page = () => {
                         <Heading as="h2" variant="page-title">
                             Alexander Dauncey
                         </Heading>
-                        <p>Game Developer ( Design / Programming )</p>
+                        <p>Game Developer ( Programming / Design )</p>
                     </Box>
 
 
@@ -45,7 +45,7 @@ const Page = () => {
                             maxWidth="150px"
                             display="inline-block"
                             borderRadius="full"
-                            src="/images/alex.jpg"
+                            src="/images/pfp.jpg"
                             alt="Profile Picture"
                         />
 
@@ -101,9 +101,15 @@ const Page = () => {
                                 Dev Log
                             </Button>
                         </NextLink>
+                        <NextLink href="AlexDaunceyCV0623.pdf" alt="My CV" target="_blank" rel="noopener noreferrer">
+                            <Button rightIcon={<ChevronRightIcon/>} colorScheme="pink" mx={2}>
+                                CV
+                            </Button>
+                        </NextLink>
                     </Box>
                 </Section>
 
+        {/*
                 <Section delay={0.2}>
                     <Heading as="h3" variant="section-title">
                         Bio
@@ -113,14 +119,11 @@ const Page = () => {
                         Born in Portsmouth, England.
                     </BioSection>
                     <BioSection>
-                        <BioYear>2002-2020</BioYear>
-                        To Add
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>2020</BioYear>
-                        Began a Digital Games Development BSc at Brighton University
+                        <BioYear>2020-2023</BioYear>
+                        Completed a Degree in Computer Science for Games, achieving a 1:1
                     </BioSection>
                 </Section>
+                */}
 
             </Container>
         </Layout>

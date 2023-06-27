@@ -77,6 +77,9 @@ const Navbar = props => {
                     <LinkItem href="/devlog" path={path}>
                         Dev Log
                     </LinkItem>
+                    <LinkItem href="/AlexDaunceyCV0623.pdf" path={path}>
+                        CV
+                    </LinkItem>
 
                 </Stack>
 
@@ -106,6 +109,11 @@ const Navbar = props => {
                                         DevLog
                                     </MenuItem>
                                 </NextLink>
+                                <a href="/AlexDaunceyCV0623.pdf" alt="My CV" target="_blank" rel="noopener noreferrer">
+                                    <MenuItem as={Link}>
+                                        CV
+                                    </MenuItem>
+                                </a>
                             </MenuList>
                         </Menu>
                     </Box>
