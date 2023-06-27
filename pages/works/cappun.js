@@ -46,11 +46,11 @@ const LogPost = () => {
                         />
                     </ImageCenter>
                     <p>
-                        Building the game involved implementing the weapons system, using JavaScript's inheritance to create different weapons with shared behaviour as
+                        Building the game involved implementing the weapons system, using JavaScript&apos;s inheritance to create different weapons with shared behaviour as
                         well as the maths required to orient shots in different directions on the 2D plane.</p><br />
                     <p>
-                        Additionally, the level is generated using a 'Walker' style grid. This is an approach based on a similar method to the 2D Roguelike 'Nuclear Throne' by Vlambeer.
-                        It involves creating fully filled maps where every tile on the grid is representing a wall. Then, in a turn by turn basis, a randomly placed 'walker' carves out
+                        Additionally, the level is generated using a &apos;Walker&apos; style grid. This is an approach based on a similar method to the 2D Roguelike &apos;Nuclear Throne&apos; by Vlambeer.
+                        It involves creating fully filled maps where every tile on the grid is representing a wall. Then, in a turn by turn basis, a randomly placed &apos;walker&apos; carves out
                         the walls by moving in its currently facing direction on each turn. Every turn, the walker has a chance to create a clone on the same tile, facing a random direction,
                         or to be destroyed (if there is another walker able to continue the work), or finally to change its own direction it is tunneling. This continues until a certain percentage
                         of the level has been carved out into walls.
