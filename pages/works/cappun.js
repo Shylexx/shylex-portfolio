@@ -6,7 +6,6 @@ import NextImage from "next/image"
 import RepoLink from "../../components/repolink"
 import CodeBlock from "../../components/codep"
 import ImageCenter from "../../components/imgwrapper"
-import Paragraph from "../../components/paragraph"
 
 const LogPost = () => {
     const thumbnail = "http://shylexx.com/images/work/thumbCapPun.jpg"
